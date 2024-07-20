@@ -78,7 +78,7 @@ export default function HomePage() {
             baseHue={325}
             className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
           >
-            <span className="loading loading-lg loading-dots"></span>
+            <span className="loading loading-dots loading-lg"></span>
           </Vortex>
         }
       >
@@ -105,7 +105,7 @@ function SurveyPage0({ changePage }: PageProps) {
       className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
     >
       <h2 className="text-center text-2xl font-bold text-black md:text-6xl">
-        Hello{person}!
+        Hello{person ? " " + person : ""}!
       </h2>
       <p className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
         Before booking the meeting for your{" "}
@@ -140,7 +140,7 @@ function SurveyPage1({ answerQuestion, changePage }: PageProps) {
       </p>
       <div className="mt-6 flex items-center gap-4">
         <button
-          className="btn btn-lg btn-outline border-2"
+          className="btn btn-outline btn-lg border-2"
           onClick={() => setAnswer("Yes")}
           style={{
             backgroundColor: answer === "Yes" ? "#222222" : undefined,
@@ -150,7 +150,7 @@ function SurveyPage1({ answerQuestion, changePage }: PageProps) {
           Yes
         </button>
         <button
-          className="btn btn-lg btn-outline border-2"
+          className="btn btn-outline btn-lg border-2"
           onClick={() => setAnswer("No")}
           style={{
             backgroundColor: answer === "No" ? "#222222" : undefined,
@@ -161,7 +161,7 @@ function SurveyPage1({ answerQuestion, changePage }: PageProps) {
         </button>
       </div>
       {answer && (
-        <div className="animate-fadeIn mt-6 flex flex-col items-center gap-4 transition-all sm:flex-row">
+        <div className="mt-6 flex animate-fadeIn flex-col items-center gap-4 transition-all sm:flex-row">
           <button
             className="btn btn-accent btn-lg text-white"
             onClick={() => {
@@ -191,13 +191,13 @@ function SurveyPage2({ answerQuestion, changePage }: PageProps) {
       <div className="mt-6 flex w-1/2 items-center justify-center gap-4">
         <input
           type="text"
-          className="input input-bordered border-neutral w-3/4 border-2"
+          className="input input-bordered w-3/4 border-2 border-neutral"
           onChange={(e) => setAnswer(e.target.value)}
           value={answer}
         ></input>
       </div>
       {answer && (
-        <div className="animate-fadeIn mt-6 flex flex-col items-center gap-4 transition-all sm:flex-row">
+        <div className="mt-6 flex animate-fadeIn flex-col items-center gap-4 transition-all sm:flex-row">
           <button
             className="btn btn-accent btn-lg text-white"
             onClick={() => {
@@ -230,7 +230,7 @@ function SurveyPage3({ answerQuestion }: PageProps) {
       </p>
       <div className="mt-6 flex items-center gap-4">
         <button
-          className="btn btn-lg btn-outline border-2"
+          className="btn btn-outline btn-lg border-2"
           onClick={() => setAnswer("Yes")}
           style={{
             backgroundColor: answer === "Yes" ? "#222222" : undefined,
@@ -240,7 +240,7 @@ function SurveyPage3({ answerQuestion }: PageProps) {
           Yes
         </button>
         <button
-          className="btn btn-lg btn-outline border-2"
+          className="btn btn-outline btn-lg border-2"
           onClick={() => setAnswer("No")}
           style={{
             backgroundColor: answer === "No" ? "#222222" : undefined,
@@ -251,7 +251,7 @@ function SurveyPage3({ answerQuestion }: PageProps) {
         </button>
       </div>
       {answer && (
-        <div className="animate-fadeIn mt-6 flex flex-col items-center gap-4 transition-all sm:flex-row">
+        <div className="mt-6 flex animate-fadeIn flex-col items-center gap-4 transition-all sm:flex-row">
           <button
             className="btn btn-accent btn-lg text-white"
             onClick={() => {
@@ -294,29 +294,29 @@ function SurveyPageGood() {
     <>
       <div className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10">
         <h1 className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
-          It&#39;s time to come clean... we are a bootstrapped startup that
-          cannot yet afford a ${amount} gift card.
+          The fact that you made it to this page means{" "}
+          <span className="text-accent">gifting for sales works</span>!
         </h1>
         <h1 className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
-          We made this demo because we wanted to show you how Flare would work
-          if you used it to reach a key customer.
+          Unfortunately... we are a bootstrapped startup that cannot yet afford
+          a ${amount} gift card.
         </h1>
         <h2 className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
-          We&#39;re sorry for the trickery, and want to offer you a{" "}
-          <span className="text-accent">${secondAmount}</span> Amazon gift card,
-          to discuss how Flare can help you book more meetings!
+          We can afford <span className="text-accent">${secondAmount}</span>
+          {", "} though and would love to discuss how Flare can help you book
+          more meetings!
         </h2>
-        <p className="mt-6 max-w-xl text-center text-xs text-black md:text-xl">
-          I mean, you&#39;re already this far 🥺
-        </p>
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row">
           <a
             className="btn btn-accent btn-lg text-white"
             href="https://cal.com/flare/15min"
           >
-            Book a meeting
+            Book a meeting and receive ${secondAmount}
           </a>
         </div>
+        <p className="mt-3 max-w-xl text-center text-xs text-black md:text-lg">
+          I mean, you&#39;re already this far 🥺
+        </p>
       </div>
     </>
   );
