@@ -109,7 +109,7 @@ function SurveyPage0({ changePage }: PageProps) {
       </h2>
       <p className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
         Before booking the meeting for your{" "}
-        <span className="text-accent">${amount}</span> Amazon gift card, we need
+        <span className="text-accent">${amount}</span> Amazon gift card we need
         you to fill out a quick survey.
       </p>
       <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row">
@@ -295,28 +295,24 @@ function SurveyPageGood() {
       <div className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10">
         <h1 className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
           The fact that you made it to this page means{" "}
-          <span className="text-accent">gifting for sales works</span>!
+          <span className="text-accent">gifting for sales works!</span>
         </h1>
         <h1 className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
           Unfortunately... we are a bootstrapped startup that cannot yet afford
           a ${amount} gift card.
         </h1>
         <h2 className="mt-6 max-w-xl text-center text-sm text-black md:text-2xl">
-          We can afford <span className="text-accent">${secondAmount}</span>
-          {", "} though and would love to discuss how Flare can help you book
-          more meetings!
+          We would love 15 min to discuss how you can use Flare to offer gifting
+          to your prospects!
         </h2>
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row">
           <a
             className="btn btn-accent btn-lg text-white"
             href="https://cal.com/flare/15min"
           >
-            Book a meeting and receive ${secondAmount}
+            Book a meeting
           </a>
         </div>
-        <p className="mt-3 max-w-xl text-center text-xs text-black md:text-lg">
-          I mean, you&#39;re already this far 🥺
-        </p>
       </div>
     </>
   );
